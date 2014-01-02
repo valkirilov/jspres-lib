@@ -1,0 +1,150 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Laptops and bigger screens  */
+@media screen and (min-width: 950px) {
+    #jspres {
+        background: rgb(0, 0, 0);
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+iPad in portrait and landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+    #jspres {
+        background: rgb(0, 0, 0);
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+iPad in landscape */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+    #jspres {
+        background: rgb(0, 0, 0);
+    }
+    
+    .slide .title {   
+        font-size: 6em;
+        line-height: 64pt;
+    }
+    .slides .sub-title {
+        font-size: 3em;
+    }
+    .slides h1, .h1 {
+        font-size: 3em;
+    }
+    .slides h2, .h2 {
+        font-size: 2.5em;
+    }
+    .slides h3, .h3 {
+        font-size: 2em;
+    }
+    .slides .content {
+        max-width: 900px;
+
+        font-size: 1.5em;
+        line-height: 16pt;
+        margin-top: 20px;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+iPad in portrait */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+    #jspres {
+        background: rgb(0, 0, 0);
+    }
+    
+    .slide .title {   
+        font-size: 6em;
+        line-height: 64pt;
+    }
+    .slides .sub-title {
+        font-size: 3em;
+    }
+    .slides h1, .h1 {
+        font-size: 3em;
+    }
+    .slides h2, .h2 {
+        font-size: 2.5em;
+    }
+    .slides h3, .h3 {
+        font-size: 2em;
+    }
+    .slides .content {
+        max-width: 900px;
+
+        font-size: 1.5em;
+        line-height: 16pt;
+        margin-top: 20px;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Smaller tablets in portrait */
+@media screen and (max-width: 600px) {  
+    #jspres {
+        background: rgb(0, 0, 255);
+    }
+    
+    .slide * {
+        background: red;
+        max-width: 580px;
+        margin: 0 auto;
+    }
+    .slide .title {   
+        font-size: 4em;
+        line-height: 48pt;
+    }
+    .slides .sub-title {
+        font-size: 4em;
+    }
+    .slides h1, .h1 {
+        font-size: 3.5em;
+    }
+    .slides h2, .h2 {
+        font-size: 3em;
+    }
+    .slides h3, .h3 {
+        font-size: 2.5em;
+    }
+    .slides .content {
+        max-width: 900px;
+
+        font-size: 2em;
+        line-height: 20pt;
+        margin-top: 20px;
+    }
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Phones in landscape */
+@media screen and (max-width: 480px) { 
+    #jspres {
+        background: rgb(0, 255, 0);
+    }
+}
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+Phones in portrait */
+@media screen and (max-width: 320px) {
+    #jspres {
+        background: rgb(255, 0, 0);
+    }
+    
+    .slide .title {   
+        font-size: 3em;
+        line-height: 24pt;
+    }
+    .slides .sub-title {
+        font-size: 2em;
+    }
+    .slides .content {
+        font-size: 1em;
+    }
+}

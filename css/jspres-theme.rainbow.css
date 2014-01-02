@@ -1,0 +1,57 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 2, 2014, 7:05:22 PM
+    Author     : valentin
+*/
+
+.slide:nth-child(11n+0) {
+    background: #16a085;
+    color:      #FFFFFF;
+}
+.slide a {
+    color:      #DDDDDD;
+}
+.slide:nth-child(11n+1) {
+    background: #27ae60;
+    color:      #FFFFFF;
+}
+.slide:nth-child(11n+2) {
+    background: #3498db;
+    color:      #FFFFFF;
+}
+.slide:nth-child(11n+3) {
+    background: #9b59b6;
+    color:      #FFFFFF;
+}
+.slide:nth-child(11n+4) {
+    background: #1abc9c;
+    color:      #FFFFFF;
+}
+.slide:nth-child(11n+5) {
+    background: #34495e;
+    color:      #FFFFFF;
+}
+.slide:nth-child(11n+6) {
+    background: #95a5a6;
+    color:      #2c3e50;
+}
+.slide:nth-child(11n+7) {
+    background: #ecf0f1;
+    color:      #8e44ad;
+}
+.slide:nth-child(11n+8) {
+    background: #e74c3c;
+    color:      #FFFFFF;
+}
+.slide:nth-child(11n+9) {
+    background: #e67e22;
+    color:      #FFFFFF;
+}
+.slide:nth-child(11n+10) {
+    background: #f1c40f;
+    color:      #16a085;
+}

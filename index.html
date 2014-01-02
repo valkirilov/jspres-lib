@@ -1,1 +1,85 @@
-Hello world from jspres-lib
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        
+        <!-- Latest compiled and minified CSS for bootsrap-->
+        <link href="css/libs/bootstrap.min.css" rel="stylesheet" type='text/css' >
+
+        <!-- jspres-lib css -->
+        <link href="css/jspres-lib.css" rel="stylesheet" type='text/css' />
+        <link href="css/jspres-lib.responsive.css" rel="stylesheet" type='text/css' />
+        
+        <link href="css/jspres-theme.rainbow.css" rel="stylesheet" type='text/css' />
+        
+        <!-- The jspres-lib needs jQuery to work so we have to import it -->
+        <script src="js/libs/jquery-1.10.2.min.js" type="text/javascript"></script>
+        <!-- The library that contains TODO -->
+        <script src="js/jspres-lib.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
+        <div id="jspres">
+            <!--<div class="about"></div>-->
+            <div class="slides">
+                <div class="slide" data-enter="enterSlideRight" data-leave="leaveSlideLeft">
+                    <div class="title">Hello world!</div>
+                    <div class="sub-title">jspres-lib is here</div>
+                </div>
+                
+                <div id="slide-with-id" class="slide" data-enter="enterSlideRight">
+                    <div class="title">What's this?</div>
+                    <div class="content">
+                        <strong>jspres-lib</strong> is a framework for
+                        creating a simple presentations just in a few minutes and is inspired by 
+                        <a href='http://bartaz.github.io/impress.js/'>impress.js</a>
+                    </div>
+                </div>
+                
+                <div class="slide" data-enter="enterSlideTop" data-leave="leaveSlideBottom">
+                    <h1 class="text-left">It's simple!</h1>
+                    <div class="content text-left">
+                        <p>It's very simple <strong>HTML</strong>.</p>
+                        <p>Yes, if you know the basics you can use it</p>
+                        <p>... But if you know CSS you can expand the functionality :)</p>
+                        
+                    </div>
+                </div>
+                
+                <div id="transition" class="slide" data-enter="enterSlideTop">
+                    <h1>Comes with a good base</h1>
+                    <div class="content text-left">
+                        You have to know that jspres-lib comes with a very good base of
+                        ready to use stuff, you only have to include it.
+                        <ul>
+                            <li>We mean a lot of things</li>
+                            <li>Elements for titles, captions and text</li>
+                            <li>Build-in themes (yeah jspres-lib comes with a styles)</li>
+                            <li>Animations and transitions</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="slide-last" class="slide" data-enter="enterSlideBottom" data-leave="leaveSlideTop">
+                    <h1>5.And substeps</h1>
+                    <div class="content">
+                        Is the second big goal of the project in the future.
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <script type="text/javascript">
+            var jspresExample = jspresLib('jspres')
+            jspresExample.init();
+        </script>
+    </body>
+</html>
