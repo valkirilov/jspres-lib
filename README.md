@@ -5,7 +5,7 @@ A JSpres-lib is a framework for simple and flat presentations
 
 #Table of contents
 ==================
-- [How to use it](#HOW TO USE IT)
+- [How to use it](#HOW-TO-USE-IT)
     - [Slides](#Slides)
     - [Steps](#Steps)
     - [Transitions](#Transitions)
