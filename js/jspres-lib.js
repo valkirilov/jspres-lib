@@ -11,7 +11,7 @@
      * SOME GLOBL AND MAGIG VARS
      */
     
-    var SLIDE_TIMEOUT = 1000;
+    var SLIDE_TIMEOUT = 1100;
     
     var isSupported = function() {
         
@@ -197,17 +197,18 @@
             addClass(enter, enter.getAttribute('data-enter'));
 
             Timeout(function() {
-                removeClass(enter, 'enter');
-                removeClass(enter, enter.getAttribute('data-enter'));
-
                 if (currentSlidesState.enter != null && currentSlidesState.enter.slideDetails.id == active.id) {
                     addClass(enter, 'active');
                     currentSlidesState.active = enter;
-                    if (enter.slideDetails)
-                        setHash(enter.slideDetails.name);
+                    //if (enter.slideDetails)
+                       // setHash(enter.slideDetails.name);
                 }
+                removeClass(enter, 'enter');
+                removeClass(enter, enter.getAttribute('data-enter'));
+                
                 currentSlidesState.enter = null;
-            }, SLIDE_TIMEOUT);
+                
+            }, SLIDE_TIMEOUT+500);
         };
         var enterStep = function(slide, stepId) {
             var enter = slide.steps[stepId];

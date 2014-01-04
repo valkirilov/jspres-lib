@@ -14,6 +14,34 @@ and (max-device-width : 1024px)  {
     #jspres {
         /*background: rgb(0, 0, 0);*/
     }
+    
+    .slide * {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .slides .slide {
+        padding-top: 10%;
+    }
+    .slide .title {   
+        font-size: 5em;
+        line-height: 64pt;
+    }
+    .slides .sub-title {
+        font-size: 2.5em;
+    }
+    .slides h1, .h1 {
+        font-size: 2.5em;
+    }
+    .slides h2, .h2 {
+        font-size: 2em;
+    }
+    .slides .content {
+        max-width: 580px;
+
+        font-size: 1.5em;
+        line-height: 16pt;
+        margin-top: 20px;
+    }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -25,29 +53,9 @@ and (orientation : landscape) {
     #jspres {
         /*background: rgb(0, 0, 0);*/
     }
-    
-    .slide .title {   
-        font-size: 6em;
-        line-height: 64pt;
-    }
-    .slides .sub-title {
-        font-size: 3em;
-    }
-    .slides h1, .h1 {
-        font-size: 3em;
-    }
-    .slides h2, .h2 {
-        font-size: 2.5em;
-    }
-    .slides h3, .h3 {
-        font-size: 2em;
-    }
-    .slides .content {
-        max-width: 900px;
 
-        font-size: 1.5em;
-        line-height: 16pt;
-        margin-top: 20px;
+    .slides .slide.vertical-center {
+        padding-top: 10%; 
     }
 }
 
@@ -62,30 +70,10 @@ and (orientation : portrait) {
     }
     
     .slides .slide {
-        padding-top: 30%;
+        padding-top: 15%;
     }
-    .slide .title {   
-        font-size: 6em;
-        line-height: 64pt;
-    }
-    .slides .sub-title {
-        font-size: 3em;
-    }
-    .slides h1, .h1 {
-        font-size: 3em;
-    }
-    .slides h2, .h2 {
-        font-size: 2.5em;
-    }
-    .slides h3, .h3 {
-        font-size: 2em;
-    }
-    .slides .content {
-        max-width: 900px;
-
-        font-size: 1.5em;
-        line-height: 16pt;
-        margin-top: 20px;
+    .slides .slide.vertical-center {
+        padding-top: 30%; 
     }
 }
 
@@ -161,6 +149,21 @@ Phones in landscape */
         line-height: 20pt;
         margin-top: 20px;
     }
+    
+    .slide .btn {
+        padding: 8px 10px;
+        margin: 5px 2px;
+
+        text-align: center;
+        font-size: 0.8em;
+    }
+    .slide .btn.btn-lg {
+        background: red;
+        padding: 12px 12px;
+        font-size: 1.5em;
+
+        margin: 5px 10px;
+    }
 }
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 Phones in portrait */
@@ -198,5 +201,19 @@ Phones in portrait */
         font-size: 1em;
         line-height: 16pt;
         margin-top: 10px;
+    }
+    
+    .slide .btn {
+        padding: 6px 8px;
+        margin: 5px 2px;
+
+        text-align: center;
+        font-size: 0.6em;
+    }
+    .slide .btn.btn-lg {
+        padding: 10px 8px;
+        font-size: 1em;
+
+        margin: 5px 10px;
     }
 }

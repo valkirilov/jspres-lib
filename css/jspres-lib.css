@@ -10,7 +10,7 @@ and open the template in the editor.
 
 @font-face {
     font-family: Electrolize;
-    src: url("../fonts/Electrolize/Electrolize-Regular.ttf");
+    src: url("../fonts/Electrolize/Electrolize-Regular.eot");
 }
 
 html, body,
@@ -24,10 +24,13 @@ html, body,
     
     
     overflow: hidden;
+    display: block;
+    position: fixed;
+    
     top: 0;
     left: 0;
     
-    font-family: Electrolize, inherit;
+    font-family: Electrolize, "Helvetica Neue", Helvetica, Arial, sans-serifi;
     text-align: center;
 }
 
@@ -223,7 +226,7 @@ li {
 .slide.active,
 .slide .step.active{
     opacity: 1;
-    z-index: 3;
+    z-index: 4;
 }
 .slide .enter {
     animation:          fadeIn 1s linear;
@@ -456,11 +459,11 @@ li {
 /* A simple enterSlideTop animation */
 @keyframes enterSlideTop {
     0%      { 
-        transform:          translateY(-1000px);
-        -webkit-transform:  translateY(-1000px);
-        -moz-transform:     translateY(-1000px);
-        -ms-transform:      translateY(-1000px);
-        -o-transform:       translateY(-1000px);
+        transform:          translateY(-100%);
+        -webkit-transform:  translateY(-100%);
+        -moz-transform:     translateY(-100%);
+        -ms-transform:      translateY(-100%);
+        -o-transform:       translateY(-100%);
     }
     100%    { 
         transform:          translateY(0);
@@ -472,11 +475,11 @@ li {
 }
 @-webkit-keyframes enterSlideTop {
     0%      { 
-        transform:          translateY(-1000px);
-        -webkit-transform:  translateY(-1000px);
-        -moz-transform:     translateY(-1000px);
-        -ms-transform:      translateY(-1000px);
-        -o-transform:       translateY(-1000px);
+        transform:          translateY(-100%);
+        -webkit-transform:  translateY(-100%);
+        -moz-transform:     translateY(-100%);
+        -ms-transform:      translateY(-100%);
+        -o-transform:       translateY(-100%);
     }
     100%    { 
         transform:          translateY(0);
@@ -489,11 +492,11 @@ li {
 /* A simple enterSlideBottom animation */
 @keyframes enterSlideBottom {
     0%      { 
-        transform:          translateY(1000px);
-        -webkit-transform:  translateY(1000px);
-        -moz-transform:     translateY(1000px);
-        -ms-transform:      translateY(1000px);
-        -o-transform:       translateY(1000px);
+        transform:          translateY(100%);
+        -webkit-transform:  translateY(100%);
+        -moz-transform:     translateY(100%);
+        -ms-transform:      translateY(100%);
+        -o-transform:       translateY(100%);
     }
     100%    { 
         transform:          translateY(0);
@@ -505,11 +508,11 @@ li {
 }
 @-webkit-keyframes enterSlideBottom {
     0%      { 
-        transform:          translateY(1000px);
-        -webkit-transform:  translateY(1000px);
-        -moz-transform:     translateY(1000px);
-        -ms-transform:      translateY(1000px);
-        -o-transform:       translateY(1000px);
+        transform:          translateY(100%);
+        -webkit-transform:  translateY(100%);
+        -moz-transform:     translateY(100%);
+        -ms-transform:      translateY(100%);
+        -o-transform:       translateY(100%);
     }
     100%    { 
         transform:          translateY(0);
@@ -715,11 +718,11 @@ li {
         -o-transform:       translateY(0);
     }
     100%    { 
-        transform:          translateY(-1000px);
-        -webkit-transform:  translateY(-1000px);
-        -moz-transform:     translateY(-1000px);
-        -ms-transform:      translateY(-1000px);
-        -o-transform:       translateY(-1000px);
+        transform:          translateY(-100%);
+        -webkit-transform:  translateY(-100%);
+        -moz-transform:     translateY(-100%);
+        -ms-transform:      translateY(-100%);
+        -o-transform:       translateY(-100%);
     }
 }
 @-webkit-keyframes leaveSlideTop {
@@ -731,11 +734,11 @@ li {
         -o-transform:       translateY(0);
     }
     100%    { 
-        transform:          translateY(-1000px);
-        -webkit-transform:  translateY(-1000px);
-        -moz-transform:     translateY(-1000px);
-        -ms-transform:      translateY(-1000px);
-        -o-transform:       translateY(-1000px);
+        transform:          translateY(-100%);
+        -webkit-transform:  translateY(-100%);
+        -moz-transform:     translateY(-100%);
+        -ms-transform:      translateY(-100%);
+        -o-transform:       translateY(-100%);
     }
 }
 /* A simple leaveSlideBottom animation */
@@ -748,11 +751,11 @@ li {
         -o-transform:       translateY(0);
     }
     100%    { 
-        transform:          translateY(1000px);
-        -webkit-transform:  translateY(1000px);
-        -moz-transform:     translateY(1000px);
-        -ms-transform:      translateY(1000px);
-        -o-transform:       translateY(1000px);
+        transform:          translateY(100%);
+        -webkit-transform:  translateY(100%);
+        -moz-transform:     translateY(100%);
+        -ms-transform:      translateY(100%);
+        -o-transform:       translateY(100%);
     }
 }
 @-webkit-keyframes leaveSlideBottom {
@@ -764,11 +767,11 @@ li {
         -o-transform:       translateY(0);
     }
     100%    { 
-        transform:          translateY(1000px);
-        -webkit-transform:  translateY(1000px);
-        -moz-transform:     translateY(1000px);
-        -ms-transform:      translateY(1000px);
-        -o-transform:       translateY(1000px);
+        transform:          translateY(100%);
+        -webkit-transform:  translateY(100%);
+        -moz-transform:     translateY(100%);
+        -ms-transform:      translateY(100%);
+        -o-transform:       translateY(100%);
     }
 }
 
