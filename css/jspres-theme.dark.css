@@ -1,10 +1,106 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
-    Created on : Jan 2, 2014, 6:11:29 PM
-    Author     : valentin
-*/
+ * jspres-theme.dark.css
+ * This theme is based on Sofasurfer [www.sofasurfer.eu]
+ *
+ *
+ * #####################
+ *  COLOR SCHEME
+ * #####################
+ *
+ * background-color:    #141311;
+ * captions-color:      #FFFFFF;
+ * content-color:       #B7B7B6;
+ * second-color:        #A2482E;
+ * href-color:          #A2482E;
+ */
 
+.slides .slide {
+    background-color:   #141311 ;
+    color:              #FFFFFF ;
+}
+.slide .sub-title {
+    color: #A2482E;
+}
+.slide h1, .slide .h1 {
+    color: inherit;
+}
+.slide h2, .slide .h2 {
+    color: #A2482E;
+}
+.slide .second-color {
+    color: #A2482E !important;
+}
+.slide .content {
+    color: inherit;
+}
+.slide a {
+     color: #A2482E !important;
+}
+.slide .btn {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+}
+.slide .btn.btn-primary {
+    background: #A2482E;
+    border-color: transparent;
+    color:#ecf0f1 !important;
+}
+
+/*******************************************************************************
+ *  SPECIFIC STYLES
+ *
+ *  These styles are used when multiple themes are used in one file.
+ *  You can call specific selement style from this theme using class .dark-theme
+ *
+ ******************************************************************************/
+.slides .slide.dark-theme {
+    background-color:   #141311 !important;
+    color:              #FFFFFF !important;
+}
+
+.slide .sub-title.dark-theme,
+.slide.dark-theme .sub-title {
+    color: #A2482E !important;
+}
+
+.slide.dark-theme h1, .slide.dark-theme .h1,
+.slide h1.dark-theme, .slide .h1.dark-theme{
+    color: inherit !important;
+}
+
+.slide.dark-theme h2, .slide.dark-theme .h2,
+.slide h2.dark-theme, .slide .h2.dark-theme{
+    color: #A2482E !important;
+}
+
+.slide.dark-theme .second-color,
+.slide .second-color.dark-theme,
+.slide.dark-theme span,
+.slide span.dark-theme{
+    color: #A2482E !important;
+}
+
+.slide.dark-theme .content,
+.slide .content.dark-theme {
+    color: inherit !important;
+}
+
+.slide.dark-theme a,
+.slide a.dark-theme {
+     color: #A2482E !important;
+}
+
+.slide.dark-theme .btn,
+.slide .btn.dark-theme {
+    background: #ecf0f1 !important;
+    color: #2c3e50 !important;
+    border: 1px solid #bdc3c7 !important;
+}
+
+.slide.dark-theme .btn.btn-primary,
+.slide .btn.btn-primary.dark-theme {
+    background: #A2482E !important;
+    border-color: transparent !important;
+    color:#ecf0f1 !important;
+}

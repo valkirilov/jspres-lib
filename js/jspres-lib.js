@@ -7,6 +7,12 @@
 
 (function(document, window) {
     
+    /*
+     * SOME GLOBL AND MAGIG VARS
+     */
+    
+    var SLIDE_TIMEOUT = 1000;
+    
     var isSupported = function() {
         
     };
@@ -60,13 +66,25 @@
         var rootContainer = null;
         var slides = null;
         var slidesNames = {};
-        var currentSlide = null;
-        var isChanging = { value: false, enterTimeout: null, leaveTimeout: null };
+
+        var currentSlidesState = { active: null, enter: null, leave: null };
+        var active = null;
+        var activeStep = null;
         
         var init = function() {
             rootContainer = byId(document, rootContainerId);
             var slidesContainer = byClassName(rootContainer, 'slides')[0];
             slides = byClassName(slidesContainer, 'slide');
+            
+            // Init steps of the slides
+            for (var slideIndex in slides) {
+                if (typeof (slides[slideIndex]).innerHTML === "string") {
+                    var currentSlide = slides[slideIndex];
+                    var steps = byClassName(currentSlide, 'step');
+                    currentSlide.steps = steps;
+                }
+            }
+            
             
             // Make a object which contains the names of the slides and when we 
             // speciffy the slide id the jspres-lib knows where to go
@@ -83,7 +101,6 @@
             
             var currentSlideHash = getCurrentHash();
             if (currentSlideHash != null) {
-                console.log('Try to go to ' + currentSlideHash);
                 gotoSlide(currentSlideHash);
             }
             else {
@@ -118,92 +135,164 @@
             else {
                 var slideName = slidesNames[slideId];
             }
+
+            if (slideId === undefined)
+                return getSlide(0);
+            
             return { name: slideName, id: parseInt(slideId) };
         };
-        var leaveSlide = function(time) {
-            if (currentSlide) {
-                var leavingSlide = currentSlide;
+        var leaveSlide = function(time) {           
+            var leave = null;
+            if (currentSlidesState.enter)
+                leave = currentSlidesState.enter;
+            else if (currentSlidesState.active)
+                leave = currentSlidesState.active;
+            
+            if (leave) {
+                currentSlidesState.leave = leave;
                 
-                removeClass(leavingSlide, 'active');
-                addClass(leavingSlide, 'leave');
-                addClass(currentSlide, leavingSlide.getAttribute('data-leave'));
+                removeClass(leave, 'active');
+                addClass(leave, 'leave');
+                addClass(leave, leave.getAttribute('data-leave'));
                 
-                isChanging.enterTimeout = Timeout(function() {
-                    removeClass(leavingSlide, 'leave');
-                    removeClass(leavingSlide, leavingSlide.getAttribute('data-leave'));
-                    isChanging.enterTimeout = null;
-                }, time);
+                Timeout(function() {
+                    removeClass(leave, 'leave');
+                    removeClass(leave, leave.getAttribute('data-leave'));
+                    
+                    // Leave all stepps of the slide
+                    for (var stepIndex in leave.steps) {
+                        if (typeof (leave.steps[stepIndex]).innerHTML === "string") {
+                            removeClass(leave.steps[stepIndex], 'active');    
+                        }
+                    }
+                    leave.lastStep = -1;
+                    
+                    currentSlidesState.leave = null;
+                }, SLIDE_TIMEOUT);
             }
         };
-        var enterSlide = function(time, slide) {
-            addClass(currentSlide, 'enter');
-            addClass(currentSlide, currentSlide.getAttribute('data-enter'));
+        var leaveStep = function(slide, stepId) {
+            var leave = slide.steps[stepId];
             
-            isChanging.leaveTimeout = Timeout(function() {
-                removeClass(currentSlide, 'enter');
-                removeClass(currentSlide, currentSlide.getAttribute('data-enter'));
-                addClass(currentSlide, 'active');
-                if (slide)
-                    setHash(slide.name);
-                
-                isChanging = false;
-                isChanging.leaveTimeout = null;
-            }, time);
+            removeClass(leave, 'active');
+            removeClass(leave, 'enter');
+            
+            addClass(leave, 'leave');
+            addClass(leave, leave.getAttribute('data-leave'));
+            slide.lastStep = stepId-1;
+
+            Timeout(function() {
+                removeClass(leave, 'leave');
+                removeClass(leave, leave.getAttribute('data-leave'));
+            }, SLIDE_TIMEOUT);
+        };
+        var enterSlide = function(slideDetails) {
+            currentSlidesState.active = null;
+            currentSlidesState.enter = slides[slideDetails.id];
+            currentSlidesState.enter.slideDetails = slideDetails;
+            
+            var enter = currentSlidesState.enter;
+            
+            addClass(enter, 'enter');
+            addClass(enter, enter.getAttribute('data-enter'));
+
+            Timeout(function() {
+                removeClass(enter, 'enter');
+                removeClass(enter, enter.getAttribute('data-enter'));
+
+                if (currentSlidesState.enter != null && currentSlidesState.enter.slideDetails.id == active.id) {
+                    addClass(enter, 'active');
+                    currentSlidesState.active = enter;
+                    if (enter.slideDetails)
+                        setHash(enter.slideDetails.name);
+                }
+                currentSlidesState.enter = null;
+            }, SLIDE_TIMEOUT);
+        };
+        var enterStep = function(slide, stepId) {
+            var enter = slide.steps[stepId];
+            if (enter.className.indexOf('active') > -1)
+                return;
+            
+            addClass(enter, 'enter');
+            addClass(enter, enter.getAttribute('data-enter'));
+            
+            Timeout(function() {
+                removeClass(enter, 'enter');
+                removeClass(enter, enter.getAttribute('data-enter'));
+
+                if (currentSlidesState['active'] && currentSlidesState['active'].lastStep >= stepId)
+                    addClass(enter, 'active');
+
+            }, SLIDE_TIMEOUT);
         };
         
-        var gotoSlide = function(slideId) {
-            console.log('Goto: ' + slideId);
+        var gotoSlide = function(slideId) {        
+            var slideDetails = getSlide(slideId);
             
-            if (isChanging.value) {
-                alert('Changing');
-                leaveSlide(0);
-                enterSlide(0);
-                
-                clearTimeout(isChanging.enterTimeout);
-                clearTimeout(isChanging.leaveTimeout);
+            if (slideDetails) {
+            
+                leaveSlide();
+                active = slideDetails;
+                enterSlide(slideDetails);
             }
-            isChanging.value = true;
+        };
+        var gotoStep = function(stepId) {
+            var slideType = null;
+            if (currentSlidesState.enter)
+                slideType = 'enter';
+            else if (currentSlidesState.active)
+                slideType = 'active';
             
-            
-            
-            // First we have to hide the current vissible slide and we are adding
-            // a `leave` class to it and removing the `active state`
-            var slide = getSlide(slideId);
-            leaveSlide(1010);
-            
-            // Then we have to change the current slide with the new one and make
-            // it vissible with `enter` animation
-            currentSlide = slides[slide.id];
-            
-            // Add enter class and the animation attribute that is provided
-            enterSlide(1010, slide);
+            currentSlidesState[slideType].lastStep = stepId;
+            enterStep(currentSlidesState[slideType], stepId);
         };
         
         var next = function() {
-            console.log('Next slide');
-            var currHash = getCurrentHash();
-            var currSlide = getSlide(currHash);
-            console.log(currSlide);
-            console.log('Go to 0: ' + currSlide.id);
-            if (currSlide.id == slides.length-1) {
-                
-                gotoSlide(0);
+            if (currentSlidesState.enter)
+                var type = 'enter';
+            else if (currentSlidesState.active)
+                var type = 'active';
+
+            if (type == 'active') {
+                var steps = currentSlidesState[type].steps;
+                if (steps.length > 0) {
+                    var nextStepId = (currentSlidesState[type].lastStep != undefined) ? (currentSlidesState[type].lastStep + 1) : 0;
+                    if (nextStepId < steps.length) {
+                        gotoStep(nextStepId);
+                        return;
+                    }
+                }
             }
-            else {
-                gotoSlide(currSlide.id+1);
-            }
+            var nextSlideId = currentSlidesState[type].slideDetails.id + 1;            
+            if (nextSlideId == slides.length)
+                nextSlideId = 0;
+
+            gotoSlide(nextSlideId);
         };
         var prev = function() {
-            console.log('Prev');
-            var currHash = getCurrentHash();
-            var currSlide = getSlide(currHash);
-            console.log(currSlide);
-            if (currSlide.id == 0) {
-                gotoSlide(slides.length-1);
+            if (currentSlidesState.enter)
+                var type = 'enter';
+            else if (currentSlidesState.active)
+                var type = 'active';
+
+            if (type == 'active') {
+                var steps = currentSlidesState[type].steps;
+                if (steps.length > 0) {
+                    var lastStepId = (currentSlidesState[type].lastStep != undefined) ? (currentSlidesState[type].lastStep) : -1;
+                    if (lastStepId >= 0) {
+                        console.log('Go back');
+                        leaveStep(currentSlidesState[type], lastStepId);
+                        return;
+                    }
+                }
             }
-            else {
-                gotoSlide(currSlide.id-1);
-            }
+
+            var prevSlideId = currentSlidesState[type].slideDetails.id - 1;            
+            if (prevSlideId == -1)
+                prevSlideId = slides.length-1;
+
+            gotoSlide(prevSlideId);
         };
         
         // Navigation events
@@ -227,7 +316,7 @@
             if (event.touches.length === 1) {
                 var touchX = event.touches[0].clientX;
                 var deviceWidth = window.innerWidth;
-                var tolerance = deviceWidth / 10;
+                var tolerance = deviceWidth / 5;
                 
                 if (touchX < tolerance) {
                     prev();

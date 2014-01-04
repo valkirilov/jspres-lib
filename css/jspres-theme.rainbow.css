@@ -1,57 +1,342 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
-    Created on : Jan 2, 2014, 7:05:22 PM
-    Author     : valentin
-*/
+ * jspres-theme.rainbow.css
+ * This theme is based on http://flatuicolors.com/
+ *
+ */
 
-.slide:nth-child(11n+0) {
-    background: #16a085;
-    color:      #FFFFFF;
+
+/*
+ * #####################
+ *  COLOR SCHEME
+ * #####################
+ * background-color:    #16a085;
+ * captions-color:      #f1c40f;
+ * content-color:       #ecf0f1;
+ * second-color:        #f1c40f;
+ * href-color:          #f39c12;
+ */
+
+.slides .slide:nth-child(3n+1) {
+    background-color:   #16a085;
+    color:              #ecf0f1;
 }
-.slide a {
-    color:      #DDDDDD;
+.slide:nth-child(3n+1) .sub-title {
+    /*TODO*/
+    color: #f1c40f;
 }
-.slide:nth-child(11n+1) {
-    background: #27ae60;
-    color:      #FFFFFF;
+.slide:nth-child(3n+1) h1, .slide:nth-child(3n+1) .h1{
+    color: inherit;
 }
-.slide:nth-child(11n+2) {
-    background: #3498db;
-    color:      #FFFFFF;
+.slide:nth-child(3n+1) h2, .slide:nth-child(3n+1) .h2{
+    color: #f1c40f;
 }
-.slide:nth-child(11n+3) {
-    background: #9b59b6;
-    color:      #FFFFFF;
+.slide:nth-child(3n+1) .second-color {
+    color: #f1c40f !important;
 }
-.slide:nth-child(11n+4) {
-    background: #1abc9c;
-    color:      #FFFFFF;
+.slide:nth-child(3n+1) .content {
+    color: inherit;
 }
-.slide:nth-child(11n+5) {
-    background: #34495e;
-    color:      #FFFFFF;
+.slide:nth-child(3n+1) a {
+     color: #f39c12 !important;
 }
-.slide:nth-child(11n+6) {
-    background: #95a5a6;
-    color:      #2c3e50;
-}
-.slide:nth-child(11n+7) {
+.slide:nth-child(3n+1) .btn {
     background: #ecf0f1;
-    color:      #8e44ad;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
 }
-.slide:nth-child(11n+8) {
-    background: #e74c3c;
-    color:      #FFFFFF;
+.slide:nth-child(3n+1) .btn.btn-primary,
+.slide:nth-child(3n+1) a.btn.btn-primary{
+    background: #f39c12;
+    border-color: transparent;
+    color: #ecf0f1 !important;
 }
-.slide:nth-child(11n+9) {
-    background: #e67e22;
-    color:      #FFFFFF;
+
+/*
+ * #####################
+ *  COLOR SCHEME
+ * #####################
+ * background-color:    #27ae60;
+ * captions-color:      #f1c40f;
+ * content-color:       #ecf0f1;
+ * second-color:        #f39c12;
+ * href-color:          #f39c12;
+ */
+
+.slides .slide:nth-child(3n+2) {
+    background-color:   #2980b9;
+    color:              #ecf0f1;
 }
-.slide:nth-child(11n+10) {
+.slide:nth-child(3n+2) .sub-title {
+    /*TODO*/
+    color: #f1c40f;
+}
+.slide:nth-child(3n+2) h1, .slide:nth-child(3n+2) .h1{
+    color: inherit;
+}
+.slide:nth-child(3n+2) h2, .slide:nth-child(3n+2) .h2{
+    color: #f1c40f;
+}
+.slide:nth-child(3n+2) .second-color {
+    color: #f1c40f !important;
+}
+.slide:nth-child(3n+2) .content {
+    color: inherit;
+}
+.slide:nth-child(3n+2) a {
+     color: #f39c12 !important;
+}
+.slide:nth-child(3n+2) .btn {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+}
+.slide:nth-child(3n+2) .btn.btn-primary {
     background: #f1c40f;
-    color:      #16a085;
+    border-color: transparent;
+    color:#d35400 !important;
+}
+
+/*
+ * #####################
+ *  COLOR SCHEME
+ * #####################
+ * background-color:    #e74c3c;
+ * captions-color:      #34495e;
+ * content-color:       #ecf0f1;
+ * second-color:        #34495e;
+ * href-color:          #f39c12;
+ */
+
+.slides .slide:nth-child(3n+3),
+.slides .slide.rainbow-theme:nth-child(3n+3) {
+    background-color:   #e74c3c;
+    color:              #ecf0f1;
+}
+.slide:nth-child(3n+3) .sub-title {
+    /*TODO*/
+    color: #34495e;
+}
+.slide:nth-child(3n+3) h1, .slide:nth-child(3n+3) .h1{
+    color: inherit;
+}
+.slide:nth-child(3n+3) h2, .slide:nth-child(3n+3) .h2{
+    color: #34495e;
+}
+.slide:nth-child(3n+3) .second-color {
+    color: #34495e !important;
+}
+.slide:nth-child(3n+3) .content {
+    color: inherit;
+}
+.slide:nth-child(3n+3) a {
+     color: #34495e !important;
+}
+.slide:nth-child(3n+3) .btn {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+}
+.slide:nth-child(3n+3) .btn.btn-primary {
+    background: #34495e;
+    border-color: transparent;
+    color:#ecf0f1 !important;
+}
+
+
+/*******************************************************************************
+ *  SPECIFIC STYLES
+ *
+ *  These styles are used when multiple themes are used in one file.
+ *  You can call specific selement style from this theme using class .rainbow-theme
+ *
+ ******************************************************************************/
+
+
+/*
+ * #####################
+ *  COLOR SCHEME
+ * #####################
+ * background-color:    #16a085;
+ * captions-color:      #f1c40f;
+ * content-color:       #ecf0f1;
+ * second-color:        #f1c40f;
+ * href-color:          #f39c12;
+ */
+
+.slides .slide.rainbow-theme:nth-child(3n+1) {
+    background-color:   #16a085;
+    color:              #ecf0f1;
+}
+
+.slide:nth-child(3n+1) .sub-title.rainbow-theme,
+.slide.rainbow-theme:nth-child(3n+1) .sub-title {
+    /*TODO*/
+    color: #f1c40f;
+}
+
+.slide.rainbow-theme:nth-child(3n+1) h1, .slide.rainbow-theme:nth-child(3n+1) .h1,
+.slide:nth-child(3n+1) h1.rainbow-theme, .slide:nth-child(3n+1) .h1.rainbow-theme{
+    color: inherit;
+}
+
+.slide.rainbow-theme:nth-child(3n+1) h2, .slide.rainbow-theme:nth-child(3n+1) .h2,
+.slide:nth-child(3n+1) h2.rainbow-theme, .slide:nth-child(3n+1) .h2.rainbow-theme{
+    color: #f1c40f;
+}
+
+.slide.rainbow-theme:nth-child(3n+1) .second-color,
+.slide:nth-child(3n+1) .second-color.rainbow-theme,
+.slide.rainbow-theme:nth-child(3n+1) span,
+.slide:nth-child(3n+1) span.rainbow-theme {
+    color: #f1c40f !important;
+}
+
+.slide.rainbow-theme:nth-child(3n+1) .content,
+.slide:nth-child(3n+1) .content.rainbow-theme {
+    color: inherit;
+}
+
+.slide.rainbow-theme:nth-child(3n+1) a,
+.slide:nth-child(3n+1) a.rainbow-theme {
+     color: #f39c12 !important;
+}
+
+.slide.rainbow-theme:nth-child(3n+1) .btn,
+.slide:nth-child(3n+1) .btn.rainbow-theme {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+}
+
+.slide.rainbow-theme:nth-child(3n+1) .btn.btn-primary,
+.slide:nth-child(3n+1) .btn.btn-primary.rainbow-theme {
+    background: #f39c12;
+    border-color: transparent;
+    color:#ecf0f1 !important;
+}
+
+/*
+ * #####################
+ *  COLOR SCHEME
+ * #####################
+ * background-color:    #27ae60;
+ * captions-color:      #f1c40f;
+ * content-color:       #ecf0f1;
+ * second-color:        #f39c12;
+ * href-color:          #f39c12;
+ */
+
+.slides .slide.rainbow-theme:nth-child(3n+2) {
+    background-color:   #2980b9;
+    color:              #ecf0f1;
+}
+
+.slide:nth-child(3n+2) .sub-title.rainbow-theme,
+.slide.rainbow-theme:nth-child(3n+2) .sub-title {
+    /*TODO*/
+    color: #f1c40f;
+}
+
+.slide.rainbow-theme:nth-child(3n+2) h1, .slide.rainbow-theme:nth-child(3n+2) .h1,
+.slide:nth-child(3n+2) h1.rainbow-theme, .slide:nth-child(3n+2) .h1.rainbow-theme{
+    color: inherit;
+}
+
+.slide.rainbow-theme:nth-child(3n+2) h2, .slide.rainbow-theme:nth-child(3n+2) .h2,
+.slide:nth-child(3n+2) h2.rainbow-theme, .slide:nth-child(3n+2) .h2.rainbow-theme{
+    color: #f1c40f;
+}
+
+.slide.rainbow-theme:nth-child(3n+2) .second-color,
+.slide:nth-child(3n+2) .second-color.rainbow-theme,
+.slide.rainbow-theme:nth-child(3n+2) span,
+.slide:nth-child(3n+2) span.rainbow-theme {
+    color: #f1c40f !important;
+}
+
+.slide.rainbow-theme:nth-child(3n+2) .content,
+.slide:nth-child(3n+2) .content.rainbow-theme {
+    color: inherit;
+}
+
+.slide.rainbow-theme:nth-child(3n+2) a,
+.slide:nth-child(3n+2) a.rainbow-theme {
+     color: #f39c12 !important;
+}
+
+.slide.rainbow-theme:nth-child(3n+2) .btn,
+.slide:nth-child(3n+2) .btn.rainbow-theme {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+}
+
+.slide.rainbow-theme:nth-child(3n+2) .btn.btn-primary,
+.slide:nth-child(3n+2) .btn.btn-primary.rainbow-theme {
+    background: #f1c40f;
+    border-color: transparent;
+    color:#d35400 !important;
+}
+
+/*
+ * #####################
+ *  COLOR SCHEME
+ * #####################
+ * background-color:    #e74c3c;
+ * captions-color:      #34495e;
+ * content-color:       #ecf0f1;
+ * second-color:        #34495e;
+ * href-color:          #f39c12;
+ */
+
+.slides .slide.rainbow-theme:nth-child(3n+3) {
+    background-color:   #e74c3c;
+    color:              #ecf0f1;
+}
+
+.slide:nth-child(3n+3) .sub-title.rainbow-theme,
+.slide.rainbow-theme:nth-child(3n+3) .sub-title {
+    /*TODO*/
+    color: #34495e;
+}
+
+.slide.rainbow-theme:nth-child(3n+3) h1, .slide.rainbow-theme:nth-child(3n+3) .h1,
+.slide:nth-child(3n+3) h1.rainbow-theme, .slide:nth-child(3n+3) .h1.rainbow-theme{
+    color: inherit;
+}
+
+.slide.rainbow-theme:nth-child(3n+3) h2, .slide.rainbow-theme:nth-child(3n+3) .h2,
+.slide:nth-child(3n+3) h2.rainbow-theme, .slide:nth-child(3n+3) .h2.rainbow-theme{
+    color: #34495e;
+}
+
+.slide.rainbow-theme:nth-child(3n+3) .second-color,
+.slide:nth-child(3n+3) .second-color.rainbow-theme,
+.slide.rainbow-theme:nth-child(3n+3) span,
+.slide:nth-child(3n+3) span.rainbow-theme {
+    color: #34495e !important;
+}
+
+.slide.rainbow-theme:nth-child(3n+3) .content,
+.slide:nth-child(3n+3) .content.rainbow-theme {
+    color: inherit;
+}
+
+.slide.rainbow-theme:nth-child(3n+3) a,
+.slide:nth-child(3n+3) a.rainbow-theme {
+     color: #34495e !important;
+}
+
+.slide.rainbow-theme:nth-child(3n+3) .btn,
+.slide:nth-child(3n+3) .btn.rainbow-theme {
+    background: #ecf0f1;
+    color: #2c3e50;
+    border: 1px solid #bdc3c7;
+}
+
+.slide.rainbow-theme:nth-child(3n+3) .btn.btn-primary,
+.slide:nth-child(3n+3) .btn.btn-primary.rainbow-theme {
+    background: #34495e;
+    border-color: transparent;
+    color:#ecf0f1 !important;
 }
