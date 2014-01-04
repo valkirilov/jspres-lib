@@ -114,7 +114,7 @@
             var infoContainer = document.createElement('div');
             infoContainer.className = 'jspres-info';
             infoContainer.innerHTML = "To navigate use the spacebar or arrow keys. <br />\
-                If you are on a touch device tap the screen edges;";
+                If you are on a touch device tap the screen edges.";
             
             if (rootContainer) {
                 rootContainer.appendChild(infoContainer);
@@ -152,12 +152,15 @@
                 currentSlidesState.leave = leave;
                 
                 removeClass(leave, 'active');
+                
                 addClass(leave, 'leave');
-                addClass(leave, leave.getAttribute('data-leave'));
+                if (leave.getAttribute('data-leave'))
+                    addClass(leave, leave.getAttribute('data-leave'));
                 
                 Timeout(function() {
                     removeClass(leave, 'leave');
-                    removeClass(leave, leave.getAttribute('data-leave'));
+                    if (leave.getAttribute('data-leave'))
+                        removeClass(leave, leave.getAttribute('data-leave'));
                     
                     // Leave all stepps of the slide
                     for (var stepIndex in leave.steps) {
@@ -169,6 +172,7 @@
                     
                     currentSlidesState.leave = null;
                 }, SLIDE_TIMEOUT);
+                
             }
         };
         var leaveStep = function(slide, stepId) {
@@ -194,7 +198,8 @@
             var enter = currentSlidesState.enter;
             
             addClass(enter, 'enter');
-            addClass(enter, enter.getAttribute('data-enter'));
+            if (enter.getAttribute('data-enter'))
+                addClass(enter, enter.getAttribute('data-enter'));
 
             Timeout(function() {
                 if (currentSlidesState.enter != null && currentSlidesState.enter.slideDetails.id == active.id) {
@@ -204,11 +209,12 @@
                        // setHash(enter.slideDetails.name);
                 }
                 removeClass(enter, 'enter');
-                removeClass(enter, enter.getAttribute('data-enter'));
+                if (enter.getAttribute('data-enter'))
+                    removeClass(enter, enter.getAttribute('data-enter'));
                 
                 currentSlidesState.enter = null;
                 
-            }, SLIDE_TIMEOUT+500);
+            }, SLIDE_TIMEOUT);
         };
         var enterStep = function(slide, stepId) {
             var enter = slide.steps[stepId];

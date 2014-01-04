@@ -42,7 +42,7 @@ html, body,
     color: #FFFFFF;
     
     width: 100%;
-    height: 64px;
+    height: 48px;
     
     margin: 0;
     padding: 10px;
@@ -52,6 +52,20 @@ html, body,
     position: fixed;
     bottom: 0px;
     z-index: 5;
+    
+    transition:     1s;
+    -webkit-transition:     1s;
+    -moz-transition:     1s;
+    -ms-transition:     1s;
+    -o-transition:     1s;
+}
+.jspres-info.hide {
+    opacity: 0;
+    display: block;
+}
+.jspres-info.hide:hover {
+    opacity: 1;
+    
 }
 
 .slide * {
@@ -228,7 +242,7 @@ li {
     opacity: 1;
     z-index: 4;
 }
-.slide .enter {
+.slide.enter {
     animation:          fadeIn 1s linear;
     -webkit-animation:  fadeIn 1s linear; /* Safari and Chrome */
     z-index: 2;
@@ -258,7 +272,6 @@ li {
 
 /* Custom events */
 .enter.enterSlideLeft {
-    
     opacity: 1;
     animation:          enterSlideLeft 1s linear;
     -webkit-animation:  enterSlideLeft 1s linear; /* Safari and Chrome */
@@ -296,8 +309,8 @@ li {
 
 .leave.leaveSlideLeft {
     opacity: 1;
-    animation:          leaveSlideLeft 1s linear;
-    -webkit-animation:  leaveSlideLeft 1s linear; /* Safari and Chrome */
+    animation:          leaveSlideLeft 1s;
+    -webkit-animation:  leaveSlideLeft 1s; /* Safari and Chrome */
 }
 .leave.leaveSlideRight {
     opacity: 1;
